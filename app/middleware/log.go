@@ -12,7 +12,10 @@ import (
 	"os"
 	"time"
 )
-
+/**
+ * @Description: 日志模块中间件
+ * @return gin.HandlerFunc
+ */
 func Logger() gin.HandlerFunc {
 	filePath := "log/softlab"
 	linkName := "latest_log.log"

@@ -4,7 +4,11 @@ import (
 	"gorm.io/gorm"
 	"lib_new_website_server/app/database/model"
 )
-
+/**
+ * @Description: 报名服务是否开启
+ * @param database: 数据库连接指针
+ * @return bool: 是否开启
+ */
 func IsSignUpOpened(database *gorm.DB) bool {
 	var signUpInfo model.Menu
 	db := database.Where("menu", "报名").First(&signUpInfo)

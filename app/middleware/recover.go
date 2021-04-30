@@ -6,11 +6,14 @@ import (
 	"log"
 	"runtime/debug"
 )
-
+/**
+ * @Description: 服务器错误后恢复现场
+ * @return gin.HandlerFunc
+ */
 func Recover() gin.HandlerFunc {
 	return func(context *gin.Context) {
 		defer func() {
-			if err:= recover(); err != nil {
+			if err := recover(); err != nil {
 				// 打印错误信息
 				log.Printf("panic: %v\n", err)
 				debug.PrintStack()

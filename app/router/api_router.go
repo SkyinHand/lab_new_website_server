@@ -5,7 +5,10 @@ import (
 	"lib_new_website_server/app/controller"
 )
 
-// 注册API相关路由, engine使用指针传递, 无需返回
+/**
+ * @Description: 注册API相关路由
+ * @param engine
+ */
 
 func RegisterApiRouter(engine *gin.Engine) {
 	apiRouter := engine.Group("/api/v1")

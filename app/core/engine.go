@@ -5,12 +5,24 @@ import (
 	"lib_new_website_server/app/database"
 	"lib_new_website_server/app/middleware"
 	"lib_new_website_server/app/router"
+	"lib_new_website_server/app/utils"
 )
 
-// 获取一个标准的引擎
+/**
+ * @Description: 获取一个Gin引擎
+ * @return *gin.Engine
+ */
 func GetDefaultEngine() *gin.Engine {
+	// 是否是Debug
+	debug := utils.GetConfig("server", "debug")
+	switch debug {
+	case "true":
+		gin.SetMode(gin.DebugMode)
+	default:
+		gin.SetMode(gin.ReleaseMode)
+	}
 	// 获得一个标准的gin引擎
-	engine := gin.Default()
+	engine := gin.New()
 	// 注册中间件
 	middleware.RegisterAllMiddleware(engine)
 	// 加载静态文件

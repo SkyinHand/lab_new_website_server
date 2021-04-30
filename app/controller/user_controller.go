@@ -8,7 +8,10 @@ import (
 	"lib_new_website_server/app/utils"
 )
 
-// 报名系统
+/**
+ * @Description: 报名软件孵化实验室
+ * @param context
+ */
 func PostNewCustomer(context *gin.Context) {
 	// 参数验证
 	var customerData schemas.NewCustomer
@@ -37,7 +40,10 @@ func PostNewCustomer(context *gin.Context) {
 	}
 }
 
-// 查询系统
+/**
+ * @Description: 查询系统
+ * @param context
+ */
 func QueryCustomer(context *gin.Context) {
 	userID := context.Param("userID")
 	// 创建database实例

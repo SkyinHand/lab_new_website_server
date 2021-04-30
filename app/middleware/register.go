@@ -2,7 +2,10 @@ package middleware
 
 import "github.com/gin-gonic/gin"
 
-// 注册所有的中间件
+/**
+ * @Description: 注册所有中间件
+ * @param engine
+ */
 func RegisterAllMiddleware(engine *gin.Engine) {
 	// 引擎加入中间件
 	engine.Use(

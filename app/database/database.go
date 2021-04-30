@@ -9,7 +9,9 @@ import (
 )
 
 var DBInstance *gorm.DB
-
+/**
+ * @Description: 初始化数据库
+ */
 func Initdatabase() {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
 		utils.GetConfig("database", "user"),
@@ -18,9 +20,8 @@ func Initdatabase() {
 		utils.GetConfig("database", "port"),
 		utils.GetConfig("database", "database"))
 	db, err := gorm.Open(mysql.New(mysql.Config{
-		DSN: dsn,
+		DSN:               dsn,
 		DefaultStringSize: 256,
-
 	}), &gorm.Config{})
 
 	if err != nil {
@@ -43,7 +44,10 @@ func Initdatabase() {
 	//	Status: 1,
 	//})
 }
-
+/**
+ * @Description: 获取数据库连接对象
+ * @return *gorm.DB
+ */
 func GetDataBase() *gorm.DB {
 	return DBInstance
 }

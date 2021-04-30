@@ -5,7 +5,10 @@ import (
 	"lib_new_website_server/app/controller"
 )
 
-// 注册Web相关路由
+/**
+ * @Description: 注册Web相关路由
+ * @param engine
+ */
 func RegisterWebRouter(engine *gin.Engine) {
 	// 获取软件孵化实验室首页内容
 	engine.GET("/", controller.GetIndexWebPage)
